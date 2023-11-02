@@ -1,0 +1,9 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    gap: 10px;
+}
+.input-group{
+ margin-left: 30px;
+}

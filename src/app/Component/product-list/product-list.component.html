@@ -1,0 +1,23 @@
+<div class="input-group w-25 mt-5">
+    
+    <!-- <input type="text" class="form-control" placeholder="Your Search" [(ngModel)]="searchinput"> -->
+    <!-- <input type="text" class="form-control" placeholder="Your Search" [(ngModel)]="searchinput" (change)=" filterproduct()"> -->
+
+    <input type="text" class="form-control" placeholder="Your Search" [(ngModel)]="searchinput" (keyup)=" filterproduct()">
+    <button class="btn btn-primary">Search</button>
+    <button class="btn btn-danger mx-2" (click)="sort('asc')">⬆️</button>
+    <button class="btn btn-danger mx-2" (click)="sort('des')">⬇️</button>
+
+    <!-- <button class="btn btn-primary" (click)=" filterproduct()">Search</button> -->
+</div>
+
+<div class="product-list">
+    <ng-container *ngFor="let p of filterproducts">
+        <app-productcard [products]="p"></app-productcard>
+    </ng-container>
+</div>
+
+<div *ngIf="allproduct.length>0 && filterproducts.length==0">
+    <p>No Search Result Found.</p>
+
+</div>
